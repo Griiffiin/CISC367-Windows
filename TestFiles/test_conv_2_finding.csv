@@ -1,0 +1,3 @@
+id,Questioner,Question,Response
+3,Carmel,"Ideally, yes; I'm curious to know about non optimised solution as well (to have a point of comparison)",nice find ! thanks <@Valeri> :taco:
+3,Carmel,nice find ! thanks <@Valeri> :taco:,"Hi, <@Ouida>! Didn't notice your reply. What seemed weird to me was the difference between what <@Valeri> posted for 3.7.0 and my example from 3.7.1. I wasn't expecting that difference between patch versions"

@@ -1,0 +1,10 @@
+speaker,message
+Romaine,`__init__.py` missing?
+Bart,"I need to know build script to publish package in pypi
+
+what is a build script; and where can i find it?"
+Freeda,"Anyone know of a library that would help me do the following: display a .png image as a window, when clicked a sound goes off, can be closed out via right click; I'm thinking AHK would be easier to use but I want to try it in python since I'm still learning; I found playsound will help with the mp3s but can't figure out what would show a png as a window and trigger on-click"
+Clemmie,<@Bart> everything for packaging a python project for pypi is here <https://packaging.python.org/tutorials/packaging-projects/>
+Bart,thanks
+Sasha,<@Freeda> You might look at PyGame... as I recall it's pretty easy to get basic stuff like that going.
+Freeda,"Came across that recently while searching, seems like it would be the best choice. Thanks"
