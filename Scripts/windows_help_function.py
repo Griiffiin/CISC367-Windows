@@ -68,10 +68,7 @@ def sentimental(a_csv):
     data = []
     df = pd.read_csv(a_csv)
     for i in range(df.shape[0]):
-        if(df.iloc[i]["Response"] == "Nothing there"):
-            return("Cannot judge the URL")
-        else:
-            data.append(df.iloc[i]["Response"])
+        data.append(df.iloc[i]["Response"])
 
     sid = SentimentIntensityAnalyzer()
     pos_score = 0
@@ -79,21 +76,25 @@ def sentimental(a_csv):
     neg_score = 0
 
     for sen in data:
-        ss = sid.polarity_scores(sen)
-        for k in ss:
-            if (k == 'neg'):
-                neg_score += ss[k]
-            elif(k == 'neu'):
-                neu_score += ss[k]
-            elif(k == 'pos'):
-                pos_score += ss[k]
-    if(pos_score+neg_score > 0.03):
-        if(pos_score > neg_score):
-            return("Positive")
+        if sen != "Nothing there":
+            ss = sid.polarity_scores(sen)
+            for k in ss:
+                if (k == 'neg'):
+                    neg_score += ss[k]
+                elif(k == 'neu'):
+                    neu_score += ss[k]
+                elif(k == 'pos'):
+                    pos_score += ss[k]
+    if(pos_score+neg_score+neu_score) != 0:
+        if(pos_score+neg_score > 0.03):
+            if(pos_score > neg_score):
+                return("Positive")
+            else:
+                return("Negative")
         else:
-            return("Negative")
+            return("Undetermined")
     else:
-        return("Undetermined")
+        return ("Cannot judge the URL")
 
 
 
