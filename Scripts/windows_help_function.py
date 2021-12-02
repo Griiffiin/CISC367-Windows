@@ -45,7 +45,7 @@ def get_GOLD_SET(ids, a_csv):
         for i in range(df.shape[0]):
             if df.iloc[i]["thread"] == each_id:
                 if "http" in df.iloc[i]["message"]:
-                    if (i != df.shape[0]-1):
+                    if (df.iloc[i+1]["thread"] == df.iloc[i]["thread"]):
                         conv_context.append({"id": each_id,"Response": df.iloc[i+1]["message"]})
                     else:
                         conv_context.append({"id": each_id,"Response": "Nothing there"})
@@ -55,14 +55,6 @@ def get_GOLD_SET(ids, a_csv):
     f = pd.DataFrame(conv_context, columns=["id","Response"])
     f.to_csv("./for_gold_set.csv", index=False)
 
-#def get_http(a_csv):
-#    url_set = []
-#    df = pd.read_csv(a_csv)
-#    for i in range(df.shape[0]):
-#        if 'http' in df.iloc[i]['message']:
-#            url_set.append(re.search("(?P<url>https?://[^\s]+)", df.iloc[i]['message']).group("url").split(">")[0])
-
-#    return url_set
 
 def sentimental(a_csv):
     data = []
@@ -92,9 +84,49 @@ def sentimental(a_csv):
             else:
                 return("Negative")
         else:
-            return("Undetermined")
+            return("Understatement")
     else:
-        return ("Cannot judge the URL")
+        return ("Undetermined")
+
+def compare_will(a_test,a_gold):
+    right_list = []
+    wrong_list = []
+    ad = pd.read_csv(a_test)
+    dd = pd.read_csv(a_gold)
+    for i in range(69):
+        if(ad.iloc[i]["Result"] != dd.iloc[i]["WILL DETERMINATION"]):
+            wrong_list.append(ad.iloc[i]["Conv ID"])
+
+        else:
+            right_list.append(ad.iloc[i]["Conv ID"])
+    print("Compare with Will's determination:")
+    print("Right Conv ID are:" )
+    print(right_list)
+    print("Wrong Conv ID are:" )
+    print(wrong_list)
+
+def compare_haoyu(a_test,a_gold):
+    right_list = []
+    wrong_list = []
+    ad = pd.read_csv(a_test)
+    dd = pd.read_csv(a_gold)
+    for i in range(69):
+        if(ad.iloc[i]["Result"] != dd.iloc[i]["HAOYU DETERMINATION"]):
+            wrong_list.append(ad.iloc[i]["Conv ID"])
+
+        else:
+            right_list.append(ad.iloc[i]["Conv ID"])
+    print("Compare with Haoyu's determination:")
+    print("Right Conv ID are:" )
+    print(right_list)
+    print("Wrong Conv ID are:" )
+    print(wrong_list)
+
+
+
+
+
+
 
 
 
