@@ -1,8 +1,7 @@
 import pandas as pd
 
-#def analysis(x):
-#from help_function import analysis, count, compare, count_chat_author
-from windows_help_function import get_conv_num, get_conv, get_new_frame, sentimental, get_GOLD_SET
+from windows_help_function import get_conv_num, get_conv, get_new_frame, sentimental, get_GOLD_SET, compare_will, \
+    compare_haoyu
 
 df = pd.read_csv('merged-pythondev-help-concat-group.csv')
 
@@ -15,14 +14,10 @@ pos_data = 0
 neu_data = 0
 neg_data = 0
 cant_data = 0
-
 get_GOLD_SET(hul,'merged-pythondev-help-concat-group.csv')
 for i in hul:
     get_conv(i,'merged-pythondev-help-concat-group.csv')
     get_new_frame(i, 'test_conv.csv')
-    #print(get_http('test_conv.csv'))
-    #print(i)
-    #print(sentimental('test_conv_finding.csv'))
     answer_list.append({"Conv ID": i, "Result" : sentimental('test_conv_finding.csv')})
 
 f = pd.DataFrame(answer_list, columns=["Conv ID", "Result"])
@@ -45,8 +40,6 @@ print("The percentage of positive data is: ",pos_data/total_data)
 print("The percentage of negative data is: ",neg_data/total_data)
 print("The percentage of undetermined data is: ",neu_data/total_data)
 print("The percentage of cannot judge data is: ",cant_data/total_data)
-#get_conv(3,'merged-pythondev-help-concat-group.csv')
 
-#get_new_frame(3,'test_conv.csv')
-#print(get_http('test_conv.csv'))
-#print(sentimental('test_conv_finding.csv'))
+compare_will("./final_result.csv","Gold_Set_Analysis.csv")
+compare_haoyu("./final_result.csv","Gold_Set_Analysis.csv")
