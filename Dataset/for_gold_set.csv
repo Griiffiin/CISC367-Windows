@@ -1,0 +1,285 @@
+id,Response
+2,"may be  ""servername/connection/connection.ini"""
+3,nice find ! thanks <@Valeri> :taco:
+3,"Hi, <@Ouida>! Didn't notice your reply. What seemed weird to me was the difference between what <@Valeri> posted for 3.7.0 and my example from 3.7.1. I wasn't expecting that difference between patch versions"
+4,Thanks will read! have a :taco: <@Raven>
+11,Nothing there
+13,Nothing there
+15,ok
+17,Nothing there
+20,Nothing there
+22,Nothing there
+27,Thanks <@Rocio> <@Maricruz> <@Valeri>  :heavy_check_mark:  solved
+33,"hloo everyone
+i was using flask and my ``` form.validate_on_submit() ``` not works
+here my main.py file
+
+
+```
+from flask import Flask , request , render_template, redirect , url_for
+from forms import RegisterForm, LoginForm
+
+@app.route(""/register"", methods=[""POST""])
+def register():
+	form = RegisterForm()
+	if form.validate_on_submit():
+		return redirect(url_for('home'))
+	else:
+		print(""failed"")
+	return render_template(""register.html"", form=form)
+```
+
+here is my forms.py file
+
+
+```
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import Email, Length, DataRequired, EqualTo
+
+class RegisterForm(FlaskForm):
+	username = StringField(""username"", validators=[DataRequired(), Length(min=5, max=20)])
+	email = StringField(""email"", validators=[DataRequired(), Email()])
+	password = PasswordField(""Password"", validators=[DataRequired()])
+	confirmPassword = PasswordField(""confirmPassword"", validators=[DataRequired(), EqualTo('password')])
+	submit = SubmitField(""signUp"")
+
+```
+
+
+and heres my register.html file
+
+```
+&lt;form method=""POST"" action=""""&gt;
+			&lt;table&gt;
+				&lt;tr&gt;
+					&lt;th&gt;{{ form.username.label }}&lt;/th&gt;
+					&lt;td&gt;{{ form.username() }}
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;th&gt;{{ form.email.label }}&lt;/th&gt;
+					&lt;td&gt;{{ form.email() }}
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;th&gt;{{ form.password.label }}&lt;/th&gt;
+					&lt;td&gt;{{ form.password() }}
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;th&gt;{{ form.confirmPassword.label }}&lt;/th&gt;
+					&lt;td&gt;{{ form.confirmPassword() }}
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;{{ form.submit() }}
+				&lt;/tr&gt;
+			&lt;/table&gt;
+		&lt;/form&gt;
+```
+
+please help"
+38,"<@Shanon> typically, you're going to use polymorphism for that; so that you either get an `S3Folder` instance or a `LocalFolder` instance, both have a `.delete()` method, and it's easy to manage in every class"
+39,"If I'm understanding you correctly, I believe the easiest way to accomplish this is to set ```slack_data``` inside the if block, and use an else to cover the case that there is no keyword found from the color_keywords list; That way the conditional would be responsible for setting slack_data, and you could cover both cases"
+39,<@Kiera> thanks but no thanks :slightly_smiling_face:; that DO link looks good ^
+42,"I think `title` is actually a function, not a property."
+46,"<@Hai> in general:  JSON = JavaScript Object Notation.  It uses JavaScript syntax to describe an ""object"" (which is represented in Python as a dictionary).  Objects contain keys which are strings (and only strings) mapped to values which may be numbers, strings, objects, or arrays of numbers, strings, objects, or arrays.; in order to produce valid JSON, you need to produce a dictionary which has string keys and values of the appropriate types described above, and feed that dictionary to `json.dumps`."
+48,<@Chad> that’s up to you; `df` would be your data frame; here’s the documentation for that method <https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_sql.html>
+48,Nothing there
+51,Nothing there
+53,Nothing there
+54,Nothing there
+60,use the date as the unique identifier.
+60,Nothing there
+62,Nothing there
+63,Nothing there
+64,"<@Lucius> It already looks okay in terms of indentation level. Certainly you could factor out more functions, but I'd say it would be your choice of how to do it. Find any bit of code that looks like it could be self-contained, create a function from it, and only return whatever is needed for the next part of the program"
+68,Nothing there
+71,"Ideally you would want to add the data to the Counter in a loop directly from the file, rather than storing everything in a list first, since that will obviously require as much memory as the file size or more."
+71,"Personally I'm not a huge fan of awk, except for the occasional one-liner. Many people will find well-written Python to be more understandable.; No particular bottlenecks with the length of lists, but some operations, like insert and delete, will get slower linearly with the list length, so if you do that a lot, you may want a different data structure."
+73,"<@Jennifer> Gonna try to creep up on this slowly, because you are getting object __str__ in the output, so things might go sideways. First try:; ```
+print("","".join([h for h in hosts]))
+```"
+76,Nothing there
+76,"<@Bart> Also try VS Code for Python. It's open source, and is quite good: <https://code.visualstudio.com/docs/python/python-tutorial>"
+76,Nothing there
+77,Nothing there
+78,"<@Jettie> Thanks, just read the documentation but can't see a clear way of doing this. Is it something a beginner could achieve?"
+82,Knowing how to ask a good question is a highly invaluable skill that will benefit you greatly in any career. <https://stackoverflow.com/help/how-to-ask> is a good collection of suggestions and strategies to help you structure and phrase your question to make it easier for those here to understand your problem and help you work to a solution.
+82,"im still so speechless, and when im speechless i need to take a week or a year off, better yet why not until 2025,
+but that spechlessness has led to discover this 20m long youtube analysis (rated at ~99% by a relatively large sample size for this topic) of how bad the *UI* of this highly specialised music software is.
+i only slimmed thru it, but most ppl would *greatly* benefit from it far more than i would,
+enjoy <https://www.youtube.com/watch?v=dKx1wnXClcI>"
+82,...
+89,Nothing there
+90,Nothing there
+91,Nothing there
+91,Nothing there
+92,Nothing there
+93,did you goto that url?
+93,`BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))`
+93,ah'; have you begun to look at the log files?
+93,Would it be alright if I ran it on port 8020? There’s a wordpress site being displayed on port 80. My Django proj is just backend stuff; they already had apache on the server so it seemed easiest
+95,wtf
+95,"apparently, they are gone again.; like, i realize that i was brash, but i definitely answered his question before i laid into, be a better human because you currently suck."
+101,Nothing there
+110,None; got it thank you every one
+110,okay I will try out (with); thank you all for helping
+112,booo
+113,"There may be an easier way to do this if there's a ""blank Q"" object to start with. Or maybe do a reduce with operator-OR."
+120,Nothing there
+123,Why are you using `json.dumps()`?; What does `cur.fetchall()` give you?
+123,```TypeError: argument of type 'datetime.datetime' is not iterable```
+130,"<@Leonore> <http://weworkremotely.com|weworkremotely.com>, <http://remotepython.com|remotepython.com>, keep an eye on the Hacker News who is hiring thread. (<https://news.ycombinator.com/> the Who is Hiring thread posts on the First workday of every month. Here is January’s <https://news.ycombinator.com/item?id=18807017)>"
+130,Nothing there
+132,Nothing there
+138,ty
+140,Nothing there
+141,Nothing there
+151,"Thanks, i’ll check it out. <@Lydia> :taco:"
+151,"this is cool, but horrible in my opinion...; doing too much sorcery with Python makes the code very hard to read"
+155,"you could be correct; &gt;Last image is skipped
+&gt;It may appear that the last image is skipped or displayed for one frame. I did not find an elegant solution to this behavior, but you can simply make a copy of the last image file to compensate.
+
+Gross i was trying to avoid that"
+155,<@Jettie> :taco:; perfect; the pause between frames must have been the issue
+158,Nothing there
+161,"<@Shan> yeah, looked into Poetry. Would be OK with using this, but I'm still equally unsure of how to do what I'm asking. There doesn't seem to be any option or section of the toml file or anything that relates to saving private user info. Also doesn't really help with best practices for saving stuff like this (should it be saved in a user directory, and the package should just expect them to be there? or...)"
+163,"Always be sure to think about the consumers.  Honestly, the biggest deterrent of most things, ease of use.  If you require some complexity in your configuration, outside of the standard norms, it may not be appreciated and used as much.  "
+168,Nothing there
+169,I'm not a lawyer or anything but afaik it is if you don't change the license; but it might be interesting to discuss with the original author if a fork is really necessary. Maybe they are willing to add what you need in it ?
+170,Nothing there
+172,"from sklearn.datasets import load_iris
+from sklearn import tree
+import graphviz
+
+
+iris= load_iris()
+
+clf= tree.DecisionTreeClassifier()
+clf.fit(iris.data, iris.target)
+
+input= [[5.9,3.0,5.1,1.8]]
+flower= clf.predict(input)
+print(flower)
+
+
+data= tree.export_graphviz(clf,  feature_names=iris.feature_names, class_names=iris.target_names, filled=True,rounded=True,special_characters=True)
+print(data)
+
+graph = graphviz.Source(data)
+# graph.render(""IRIS TREE"")
+# graph.view()"
+175,"I think i see what you're saying. So instead my if function should just test to see if i is a in the alphabet. And i was wanting to add i to alphabet if it wasn't already in there. So now i have this. It's still failing but hopefully i'm closer to the right idea now.                                                                            def is_pangram(sentence):
+    alphabet = ''
+    alph = ""abcdefghijklmnopqrstuvwkyzABCDEFGHIJKLMNOPQRSTUVWXYZ""
+    sentence = input(""What is the string we would like to take in?"")
+    for i in sentence:
+        if i in alph:
+            alphabet += i
+        else:
+            pass
+    alphabet = alphabet.lower()
+    if ""abcdefghijklmnopqrstuvwxyz"" in alphabet:
+        return True
+    else:
+        return False
+print(is_pangram(""""))"
+179,Nothing there
+181,And there's also <#C1PB8ME48|sqlalchemy>
+186,Nothing there
+190,"It looks like it's using numpy arrays here, so an array slice is probably the way to go."
+190,"Are these outputs valid ?  :
+
+<https://github.com/paulgureghian/Google_Colab_Notebooks/blob/master/CNNs_with_Keras.ipynb>"
+190,"It's at least claiming 98-99% accuracy on the trained model, so there's no immediately obvious error. Are you suspicious of it for some reason?"
+193,great thanks
+198,oh gross.
+198,much more readable
+203,please refrain from using pictures.
+203,"Wow, Worked perfectly <@Shan> I was thinking in use a for to extract , use join and append to a list, your approach is much better. I was doing wrong using '(' and ')' beacause clearly should give me groups for each part of regex, Thanks a lot!"
+203,Nothing there
+207,"Thank you <@Conrad>, will definitely look into this. I’m confused as to why aws is giving me a different response even though I explicitly said I want the PST timezone. :taco:"
+207,Nothing there
+213,"ah, yeah, that would be helpful"
+214,"Thanks, nice find. I tried some of the methods listed here and it illuminated another issue I think I need to solve first. ```AssertionError: 2 columns passed, passed data had 34 columns
+```
+Seems my data is messed up at an earlier point as my lists have 34 columns..; I'll try to sort that out first!; Thansk for the link!"
+214,"Sorry got hit with a powercut here, looking into it now; The results are correct; I did modify so `headers=False`, same result"
+214,can somebody help here please <https://pythondev.slack.com/archives/C07EFMZ1N/p1547543796309000>
+214,"<@Jimmy> <@Clemmie> Thanks you, i will look at it !"
+217,Nothing there
+218,"<@Olevia> it sounds like you mean divergent and convergent in the context of a mathematical series, is that right?; As in, a convergent series is one where limit of x -&gt; infinity is well defined"
+218,"For the moment i need to check if a series is convergente or divergent, then i will check the series has a limit"
+218,"Wait, if this is for homework shouldn’t you be coding the algorithm?; Basically implementing what you read in that link? (Which I have not read, just glanced at)"
+218,"I've tried with a list like [1, 2, 3, 4, ...], it's easier, but i think if i want to do a very good function, it should be a mathematical function; I think i will see if it's possible to use finite sequence, it would be much easier to try to develop"
+221,I'm in 2.7 still; Requests is 2.19.1; How do I figure out what the encoding is?
+224,Nothing there
+222,"do you really need to stream the response?; just asking; ```        response.raw.read = functools.partial(response.raw.read, decode_content=True)```"
+222,"ok, so uwsgi is using multiple threads and processes"
+225,"I am Getting this error message while running `from NseTools import nse`
+```Exception in thread Thread-1:
+Traceback (most recent call last):
+  File ""C:\Users\Ripper\AppData\Local\Programs\Python\Python37\lib\threading.py"", line 917, in _bootstrap_inner
+    self.run()
+  File ""C:\Users\Ripper\AppData\Local\Programs\Python\Python37\lib\threading.py"", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File ""G:\Stocks Market\test\graphJSSTest.py"", line 16, in ntstockdetails
+    data = nse.get_quote(stkname)
+  File ""C:\Users\Ripper\AppData\Local\Programs\Python\Python37\lib\site-packages\nsetools\nse.py"", line 160, in get_quote
+    buffer = match.group(1)
+AttributeError: 'NoneType' object has no attribute 'group'```; This is the main code I run to fetch data
+`data = nse.get_quote(stkname)`; Sometime it runs fine but sometime I get the above error; and mostly I am getting error when I am fetching the data in higher frequency"
+225,I understand my memory concerns; What I need is an alternative way to accomplish this; A system with 16GB ram is enough to allow uploading 2MB file to a database I think :thinking_face:
+225,Nothing there
+225,thanks <@Shan>  currently not at desk i will change and revert 
+234,"That's probably just slurping everything into a single column, though. The problem is the trailing comma, which implies an extra column. Do you have any control over how that file is generated?"
+235,"thanks ill give it a read; ```&gt;&gt;&gt; s = smtplib.SMTP('localhost')
+Traceback (most recent call last):
+  File ""&lt;stdin&gt;"", line 1, in &lt;module&gt;
+  File ""/usr/lib64/python2.7/smtplib.py"", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File ""/usr/lib64/python2.7/smtplib.py"", line 315, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File ""/usr/lib64/python2.7/smtplib.py"", line 290, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File ""/usr/lib64/python2.7/socket.py"", line 571, in create_connection
+    raise err
+socket.error: [Errno 113] No route to host```"
+236,"well i tried to directly insert the data creating a new dataframe, but its giving an error ""Shape of passed values is (1, 10), indices imply (10, 10)"""
+243,"<@Mica>, its not a Python frontend as such......I just want to use Python in the current HTML/CSS template I have to communicate to an existing REST API, dont know if this make sense"
+244,I don’t think I follow this but i’ll reread it a few times
+244,Okay thanks guys this looks promising; <@Caridad> :taco:; <@Claudine> :taco:
+252,Nothing there
+253,Nothing there
+256,okay
+257,Nothing there
+258,Nothing there
+260,Nothing there
+263,Nothing there
+264,"Oh right, I misread the original question.; I’d just fix the scripts; seems the more correct way, rather than removing python from the PATH"
+264,"I’d recommend using `requests` over urllib. But in any case, your access token is incorrect. Hence the server is telling you you’re forbidden; try looking at the response text to see if it’s giving you an explicit error"
+264,Nothing there
+268,Nothing there
+273,none of that is particularly pythonic :confused:; the reason the `process_matches` is slow is the mongodb insert I expect; and it’s full of mixed concerns
+275,I have the hardest times with code snippets in Slack.....
+276,<@Hiroko> hmm nice one. but i dont think this will exactly fit my need; any other better approaches to control this in python; I want to split a list into batches
+276,"yes, how would i implement something simple in python"
+280,"at the moment bs4; sleep will do actually, thanks"
+281,"Advent of code has some interesting problems as well, although they are more focused on algorithms than general problem solving.; And can of course be solved even though it's not december"
+282,"Yep , it’s an industrial equipment.; And we are writing simulation server for it - for testing purposes"
+283,"Has anyone here done some heavy production level work with schedulers? E.g do something at a specific time, interval, at this timezone
+This scheduler can have over 100 active tasks a day, and the schedules can change dynamically (Stored in DB)
+When individual tasks are triggered by the scheduer, based on some conditions some other tasks are also scheduled ahead of time.
+
+Things I've tried - celery and huey"
+283,"Yes, I have datadog logging a bunch of stuff. I can show you some interesting graphs.
+
+No tasks were dispatched between 4am and 7am UTC"
+283,"haha, yes its basically like - have you turned it on? :joy:"
+283,"The first one is total requests, and 3rd is latency. Both are actually for postgres, the db"
+284,"There have been some issues in the past with celery and django-celery-beat around missing/lost periodic tasks. Are you on the most recent stable versions of everything (django, celery, django-celery-beat)?; Also are the tasks missed, or do you see a message in your redis log that they were dispatched but didn’t run?"
+285,And won’t be implemented anytime soon; <https://www.python.org/dev/peps/pep-0426/>; There really isn’t a need for that kind of rigid hierarchy with python. The conventions are less enterprise-y and more relaxed 
+285,"Yes, PEP-423 seems more like guidelines. I don't think there is much to implement per se."
+289,"(Btw, thanks for your very unique nickname!)"
+290,Nothing there
+290,Aha! The comma was the cause! Have a :taco: <@Jimmy> <@Conrad>
+297,"If I understand your question, it looks like the module has a `convertToCsv()` method which takes a string and outputs CSV lines."
+299,"thats what i see a lot; as soon as i first researched global variables (because i used them frequently in vba for excel), I was telling myself ""stay away...:zany_face:""."
